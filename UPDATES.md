@@ -1,0 +1,11 @@
+- **1.0.0**
+    - Microsgen first launch
+    - Ability to generate DTOs, Service & Tests for new project
+- **1.0.1**
+    - Fixed bug with generating Service & Tests correctly
+    - rename /dtoMapper to /mapper
+    - private contructor in DTO mappers
+- **1.1.0**
+    - In controller tests use DateTimeFormatter only when necessary
+    - Removed interfaces for services
+    - Handler for Exception.class in ControllerAdvice

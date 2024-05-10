@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="MicrosGen">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/MicrosGen.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

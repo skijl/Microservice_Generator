@@ -1,0 +1,16 @@
+
+    @Test
+    void testUpdateById_EntityNotFoundException() {
+        ${class_name} updated${model_name} = Static${model_name}.${lowercase_model_name}1();
+        when(${lowercase_model_name}Repository.findById(Static${model_name}.ID)).thenReturn(java.util.Optional.empty());
+
+        assertThrows(EntityNotFoundException.class, () -> ${lowercase_model_name}Service.updateById(Static${model_name}.ID, updated${model_name}));
+        verify(${lowercase_model_name}Repository, times(1)).findById(Static${model_name}.ID);
+        verify(${lowercase_model_name}Repository, never()).save(updated${model_name});
+    }
+
+    @Test
+    void testUpdateById_AnyException() {
+        ${class_name} existing${model_name} = Static${model_name}.${lowercase_model_name}1();
+        ${class_name} updated${model_name} = Static${model_name}.${lowercase_model_name}2();
+        when(${lowercase_model_name}Repository.findById(Static${model_name}.ID)).thenReturn(java.util.Optional.of(existing${model_name}));

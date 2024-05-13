@@ -1,0 +1,12 @@
+    @InjectMocks
+    private ${model_name}Service ${lowercase_model_name}Service;
+    private final ${class_name} ${lowercase_model_name} = Static${model_name}.${lowercase_model_name}1();
+    private final ${class_name} ${lowercase_model_name}2 = Static${model_name}.${lowercase_model_name}2();
+
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
+    }
+
+    @Test
+    void testCreate() {

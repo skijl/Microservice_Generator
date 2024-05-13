@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MicroGenSwing:jar">
+    <output-path>$USER_HOME$/OneDrive/Desktop</output-path>
+    <root id="archive" name="MicroGenSwing.jar">
+      <element id="module-output" name="MicroGenSwing" />
+    </root>
+  </artifact>
+</component>

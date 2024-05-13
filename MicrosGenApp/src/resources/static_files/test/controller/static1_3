@@ -1,0 +1,22 @@
+    private final ${model_name}DtoRequest ${lowercase_model_name}Request = Static${model_name}.${lowercase_model_name}DtoRequest1();
+    private final ${class_name} ${lowercase_model_name}Model = Static${model_name}.${lowercase_model_name}1(); 
+    private final ${model_name}DtoResponse ${lowercase_model_name}Response = Static${model_name}.${lowercase_model_name}DtoResponse1();
+
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
+        ${model_name}Controller ${lowercase_model_name}Controller = new ${model_name}Controller(${lowercase_model_name}Service);
+        mockMvc = MockMvcBuilders.standaloneSetup(${lowercase_model_name}Controller)
+                .setControllerAdvice(new GlobalExceptionHandler(DOCUMENTATION_URI))
+                .build();
+    }
+
+    @Test
+    void testCreate_Success_ShouldReturnCreated() throws Exception {
+        when(${lowercase_model_name}Service.create(any(${class_name}.class))).thenReturn(${lowercase_model_name}Model);
+
+        mockMvc.perform(post("${controller_api}")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(${lowercase_model_name}Request)))
+                .andExpect(status().isCreated())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))

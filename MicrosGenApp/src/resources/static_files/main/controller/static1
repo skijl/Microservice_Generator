@@ -1,0 +1,66 @@
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import jakarta.validation.Valid;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/${request_model_name}")
+public class ${model_name}Controller {
+    private final ${model_name}Service ${lowercase_model_name}Service;
+
+    public ${model_name}Controller(${model_name}Service ${lowercase_model_name}Service) {
+        this.${lowercase_model_name}Service = ${lowercase_model_name}Service;
+    }
+
+    @PostMapping
+    @Operation(summary = "Create an ${lowercase_model_name}", description = "Create new ${lowercase_model_name}")
+    @ApiResponse(responseCode = "201", description = "${model_name} saved successfully")
+    @ApiResponse(responseCode = "400", description = "Invalid input")
+    @ApiResponse(responseCode = "404", description = "Invalid foreign key that is not found")
+    @ApiResponse(responseCode = "503", description = "Database connection failed")
+    public ResponseEntity<${model_name}DtoResponse> create${model_name}(@Valid @RequestBody ${model_name}DtoRequest ${lowercase_model_name}DtoRequest) {
+        ${class_name} ${lowercase_model_name} = ${model_name}DtoMapper.toModel(${lowercase_model_name}DtoRequest);
+        ${lowercase_model_name} = ${lowercase_model_name}Service.create(${lowercase_model_name});
+        return new ResponseEntity<>(${model_name}DtoMapper.toResponse(${lowercase_model_name}), HttpStatus.CREATED);
+    }
+
+    @GetMapping("/{id}")
+    @Operation(summary = "Get ${model_name}", description = "Get ${model_name} By Id")
+    @ApiResponse(responseCode = "200", description = "${model_name} Get successfully")
+    @ApiResponse(responseCode = "404", description = "${model_name} with such an Id not found")
+    public ResponseEntity<${model_name}DtoResponse> get${model_name}ById(@PathVariable("id") ${id_type} id) {
+        ${class_name} ${lowercase_model_name} = ${lowercase_model_name}Service.getById(id);
+        return new ResponseEntity<>(${model_name}DtoMapper.toResponse(${lowercase_model_name}), HttpStatus.OK);
+    }
+
+    @GetMapping
+    @Operation(summary = "Get All ${model_name}", description = "Get All ${model_name}")
+    @ApiResponse(responseCode = "200", description = "${model_name} Get All successfully")
+    @ApiResponse(responseCode = "404", description = "No records with ${model_name} have been found")
+    public ResponseEntity<Page<${model_name}DtoResponse>> getAll${model_name}(Pageable pageable) {
+        Page<${class_name}> ${lowercase_model_name}Page = ${lowercase_model_name}Service.getAll(pageable);
+        return new ResponseEntity<>(${lowercase_model_name}Page.map(${model_name}DtoMapper::toResponse), HttpStatus.OK);
+    }
+
+    @PutMapping("/{id}")
+    @Operation(summary = "Update an ${lowercase_model_name}", description = "Update an ${lowercase_model_name} by Id and new ${model_name}")
+    @ApiResponse(responseCode = "201", description = "${model_name} updated successfully")
+    @ApiResponse(responseCode = "400", description = "Invalid input")
+    @ApiResponse(responseCode = "404", description = "${model_name} with such an Id not found or invalid foreign key that is not found")
+    public ResponseEntity<${model_name}DtoResponse> update${model_name}(@PathVariable("id") ${id_type} id, @Valid @RequestBody ${model_name}DtoRequest ${lowercase_model_name}DtoRequest) {
+        ${class_name} ${lowercase_model_name} = ${model_name}DtoMapper.toModel(${lowercase_model_name}DtoRequest);
+        ${lowercase_model_name} = ${lowercase_model_name}Service.updateById(id, ${lowercase_model_name});
+        return new ResponseEntity<>(${model_name}DtoMapper.toResponse(${lowercase_model_name}), HttpStatus.CREATED);
+    }
+
+    @DeleteMapping("/{id}")
+    @Operation(summary = "Delete an ${lowercase_model_name}", description = "Delete an ${lowercase_model_name} by id")
+    @ApiResponse(responseCode = "204", description = "${model_name} deleted successfully")
+    public ResponseEntity<Boolean> delete${model_name}(@PathVariable("id") ${id_type} id) {
+        return new ResponseEntity<>(${lowercase_model_name}Service.deleteById(id), HttpStatus.NO_CONTENT);
+    }
+}

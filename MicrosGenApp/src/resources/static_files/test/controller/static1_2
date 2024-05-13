@@ -1,0 +1,19 @@
+import java.util.Arrays;
+import java.util.List;
+
+import static org.hamcrest.Matchers.hasSize;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+
+class ${model_name}ControllerTest {
+
+    private MockMvc mockMvc;
+
+    @Mock
+    private ${model_name}Service ${lowercase_model_name}Service;
+
+    private final String DOCUMENTATION_URI = "http://swagger_documentation";
+    private final ObjectMapper objectMapper = new ObjectMapper();

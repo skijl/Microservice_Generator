@@ -1,0 +1,53 @@
+    }
+
+    @Test
+    void testUpdateById_InvalidInput_ShouldReturnBadRequest() throws Exception {
+        mockMvc.perform(put("${controller_api}/"+Static${model_name}.ID)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{}"))
+                .andExpect(status().isBadRequest())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON));
+    }
+
+    @Test
+    void testUpdateById_EntityNotFoundException_ShouldReturnNotFound() throws Exception {
+        when(${lowercase_model_name}Service.updateById(any(), any(${class_name}.class))).thenThrow(new EntityNotFoundException("${model_name} not found"));
+
+        mockMvc.perform(put("${controller_api}/"+Static${model_name}.ID)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(${lowercase_model_name}Request)))
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.errorMessage").value("${model_name} not found"))
+                .andExpect(jsonPath("$.documentationUri").value(DOCUMENTATION_URI));
+    }
+
+    @Test
+    void testUpdateById_AnyException_ShouldReturnBadRequest() throws Exception {
+        doThrow(new DataAccessException("Database connection failed") {}).when(${lowercase_model_name}Service).updateById(any(), any(${class_name}.class));
+
+        mockMvc.perform(put("${controller_api}/"+Static${model_name}.ID)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(${lowercase_model_name}Request)))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.errorMessage").value("Database connection failed"))
+                .andExpect(jsonPath("$.documentationUri").value(DOCUMENTATION_URI));
+    }
+
+    @Test
+    void testDelete_Success_ShouldReturnNoContent() throws Exception {
+        when(${lowercase_model_name}Service.deleteById(Static${model_name}.ID)).thenReturn(true);
+
+        mockMvc.perform(delete("${controller_api}/"+Static${model_name}.ID))
+                .andExpect(status().isNoContent());
+    }
+	
+    @Test
+    void testDelete_AnyException_ShouldReturnBadRequest() throws Exception {
+        doThrow(new DataAccessException("Database connection failed") {}).when(${lowercase_model_name}Service).deleteById(Static${model_name}.ID);
+
+        mockMvc.perform(delete("${controller_api}/"+Static${model_name}.ID))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.errorMessage").value("Database connection failed"))
+                .andExpect(jsonPath("$.documentationUri").value(DOCUMENTATION_URI));
+    }
+}

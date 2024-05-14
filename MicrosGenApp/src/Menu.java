@@ -134,22 +134,26 @@ public class Menu extends JFrame {
         directorySelectPanel.add(comboBox);
 
         // Create action panel
-        JPanel actionPanel = new JPanel();
-        actionPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+        JPanel firstRowPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        JPanel secondRowPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 
+        //Create buttons
         JButton generateDTOButton = generateDTOButton();
+        JButton generateDTOMapperButton = generateDTOMapperButton();
         JButton generateServiceButton = generateServiceButton();
         JButton generateTestsButton = generateTestsButton();
 
-        actionPanel.add(generateDTOButton);
-        actionPanel.add(generateServiceButton);
-        actionPanel.add(generateTestsButton);
+        firstRowPanel.add(generateDTOButton);
+        firstRowPanel.add(generateDTOMapperButton);
+        secondRowPanel.add(generateServiceButton);
+        secondRowPanel.add(generateTestsButton);
 
         // Create a container panel for actionPanel and processInfoPanel
         JPanel formPanel = new JPanel();
         formPanel.setLayout(new BoxLayout(formPanel, BoxLayout.Y_AXIS));
         formPanel.add(directorySelectPanel);
-        formPanel.add(actionPanel);
+        formPanel.add(firstRowPanel);
+        formPanel.add(secondRowPanel);
         formPanel.add(processInfoPanel);
 
         // Add components to content pane
@@ -204,6 +208,8 @@ public class Menu extends JFrame {
                 action = "Tests for /" + directoryName;
             }else if(scriptPath.equals("microservice-generator1.sh")) {
                 action = "DTOs for /" + directoryName;
+            }else if(scriptPath.equals("mapper-generator.sh")) {
+                action = "DTO Mappers for /" + directoryName;
             }else{
                 action = "Service for /" + directoryName;
             }
@@ -242,6 +248,17 @@ public class Menu extends JFrame {
         generateDTOButton.addActionListener(e -> {
             processInfoLabel.setText("Generating DTOs for /" + directoryName+"for "+comboBox.getSelectedItem()+"...");
             runScript("microservice-generator1.sh", processInfoLabel);
+        });
+        return generateDTOButton;
+    }
+    public JButton generateDTOMapperButton(){
+        JButton generateDTOButton = new JButton("Generate DTO Mappers");
+        generateDTOButton.setBackground(new Color(30, 144, 255)); // Dark blue color
+        generateDTOButton.setForeground(Color.WHITE); // White text color
+        generateDTOButton.setFocusable(false);
+        generateDTOButton.addActionListener(e -> {
+            processInfoLabel.setText("Generating DTO Mappers for /" + directoryName+"for "+comboBox.getSelectedItem()+"...");
+            runScript("mapper-generator.sh", processInfoLabel);
         });
         return generateDTOButton;
     }

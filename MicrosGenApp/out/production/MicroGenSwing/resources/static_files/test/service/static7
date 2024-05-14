@@ -1,0 +1,29 @@
+	    when(${lowercase_model_name}Repository.save(updated${model_name})).thenThrow(new DataAccessException("Database connection failed") {
+        });
+
+        RuntimeException exception = assertThrows(RuntimeException.class, () -> ${lowercase_model_name}Service.updateById(Static${model_name}.ID, updated${model_name}));
+
+        assertNotNull(exception);
+        assertEquals("Database connection failed", exception.getMessage());
+        verify(${lowercase_model_name}Repository, times(1)).save(updated${model_name});
+    }
+
+    @Test
+    void testDeleteById_Success() {
+        boolean result = ${lowercase_model_name}Service.deleteById(Static${model_name}.ID);
+
+        verify(${lowercase_model_name}Repository).deleteById(Static${model_name}.ID);
+        assertTrue(result);
+    }
+
+    @Test
+    void testDeleteById_AnyException() {
+        doThrow(new DataAccessException("Database connection failed") {}).when(${lowercase_model_name}Repository).deleteById(Static${model_name}.ID);
+
+        RuntimeException exception = assertThrows(RuntimeException.class, () -> ${lowercase_model_name}Service.deleteById(Static${model_name}.ID));
+
+        assertNotNull(exception);
+        assertEquals("Database connection failed", exception.getMessage());
+        verify(${lowercase_model_name}Repository, times(1)).deleteById(Static${model_name}.ID);
+    }
+}

@@ -1,0 +1,10 @@
+	    when(${lowercase_model_name}Repository.findById(Static${model_name}.ID)).thenReturn(java.util.Optional.of(existing${model_name}));
+        when(${lowercase_model_name}Repository.save(updated${model_name})).thenReturn(updated${model_name});
+
+        ${class_name} result = ${lowercase_model_name}Service.updateById(Static${model_name}.ID, updated${model_name});
+
+        assertEquals(updated${model_name}, result);
+        verify(${lowercase_model_name}Repository, times(1)).findById(Static${model_name}.ID);
+        verify(${lowercase_model_name}Repository, times(1)).save(updated${model_name});
+    }
+

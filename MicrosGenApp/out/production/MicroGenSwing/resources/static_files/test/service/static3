@@ -1,0 +1,6 @@
+	    when(${lowercase_model_name}Repository.save(any(${class_name}.class))).thenReturn(${lowercase_model_name});
+
+        ${class_name} created${model_name} = ${lowercase_model_name}Service.create(${lowercase_model_name});
+
+        assertNotNull(created${model_name});
+        assertEquals(${lowercase_model_name}, created${model_name});

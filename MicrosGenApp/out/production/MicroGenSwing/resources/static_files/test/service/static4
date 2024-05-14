@@ -1,0 +1,42 @@
+        when(${lowercase_model_name}Repository.findById(Static${model_name}.ID)).thenThrow(new DataAccessException("Database connection failed") {
+        });
+
+        RuntimeException exception = assertThrows(RuntimeException.class, () -> ${lowercase_model_name}Service.getById(Static${model_name}.ID));
+
+        assertNotNull(exception);
+        assertEquals("Database connection failed", exception.getMessage());
+        verify(${lowercase_model_name}Repository, times(1)).findById(Static${model_name}.ID);
+    }
+
+    @Test
+    void testGetAll() {
+        List<${class_name}> ${lowercase_model_name}List = new ArrayList<>();
+        ${lowercase_model_name}List.add(${lowercase_model_name});
+        ${lowercase_model_name}List.add(${lowercase_model_name}2);
+        Page<${class_name}> ${lowercase_model_name}Page = new PageImpl<>(${lowercase_model_name}List);
+        Pageable pageable = Pageable.unpaged();
+        when(${lowercase_model_name}Repository.findAll(pageable)).thenReturn(${lowercase_model_name}Page);
+
+        Page<${class_name}> result = ${lowercase_model_name}Service.getAll(pageable);
+
+        assertEquals(${lowercase_model_name}List.size(), result.getSize());
+        assertEquals(${lowercase_model_name}, result.getContent().get(0));
+        assertEquals(${lowercase_model_name}2, result.getContent().get(1));
+    }
+
+    @Test
+    void testGetAll_AnyException() {
+        when(${lowercase_model_name}Repository.findAll(any(Pageable.class))).thenThrow(new DataAccessException("Database connection failed") {});
+
+        Pageable pageable = Pageable.unpaged();
+        RuntimeException exception = assertThrows(DataAccessException.class, () -> ${lowercase_model_name}Service.getAll(pageable));
+
+        assertNotNull(exception);
+        assertEquals("Database connection failed", exception.getMessage());
+        verify(${lowercase_model_name}Repository, times(1)).findAll(any(Pageable.class));
+    }
+
+    @Test
+    void testUpdate_Success() {
+	    ${class_name} existing${model_name} = Static${model_name}.${lowercase_model_name}1();
+        ${class_name} updated${model_name} = Static${model_name}.${lowercase_model_name}2();

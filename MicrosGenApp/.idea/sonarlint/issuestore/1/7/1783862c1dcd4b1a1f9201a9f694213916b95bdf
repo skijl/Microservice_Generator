@@ -1,27 +1,27 @@
 
-	java:S112ã"FDefine and throw a dedicated exception instead of using a generic one.(¼ÿ¾¹ÿÿÿÿÿ8­ê˜£÷1J$9d55a2c9-7f6a-41a9-92f5-833146e4ca47
+	java:S112ã"FDefine and throw a dedicated exception instead of using a generic one.(¼ÿ¾¹ÿÿÿÿÿ8­ê˜£÷1J$ae7c5e2e-c9ae-4dcd-bc63-0409ce47a715
 ]
-java:S1220""Move this file to a named package.8²ê˜£÷1J$2e53aacf-7dae-43e3-8655-e7d74e0e717f
+java:S1220""Move this file to a named package.8²ê˜£÷1J$3dc3bdd4-345c-4a4c-ab73-299695558fb1
 
-java:S2095é"DUse try-with-resources or close this "Stream" in a "finally" clause.(Ã´Ô¸úÿÿÿÿ8Êê˜£÷1J$3408010d-a994-479c-af7b-b88e6d172812
-˜	java:S116*"VRename this field "SCRIPT_PATH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÙÊ—8Ëê˜£÷1J$eefff16f-a3e4-4ef4-9619-890061f3258a
+java:S2095é"DUse try-with-resources or close this "Stream" in a "finally" clause.(Ã´Ô¸úÿÿÿÿ8Êê˜£÷1J$34674d3a-ecb6-414a-a1cb-5b11c6bf31c9
+˜	java:S116*"VRename this field "SCRIPT_PATH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶ı¿8Ëê˜£÷1J$02f19824-ac42-4cfa-8d6d-d953b28ea882
 ”
-java:S1450-"QRemove the "os" field and declare it as a local variable in the relevant methods.(Ò…óó8Îê˜£÷1J$9be611ba-287d-4a82-bbbf-66ac7d146022
+java:S1450-"QRemove the "os" field and declare it as a local variable in the relevant methods.(Ò…óó8Îê˜£÷1J$1c8c3126-c04a-4265-b6a3-0c64e4a22bb7
 •
-java:S37761"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(¸§Ó8Ñê˜£÷1J$23d30fab-9737-4de9-a13e-9902c50245f3
+java:S37761"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(¸§Ó8Ñê˜£÷1J$b465161f-ff84-439f-b7c5-fc062b5d531b
 ‘
-java:S32527"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(Õû»öşÿÿÿÿ8Òê˜£÷1J$bd91cdc5-9de4-4417-a357-e64e6f569c9b
+java:S32527"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(Õû»öşÿÿÿÿ8Òê˜£÷1J$7d4e311c-c1d6-48fd-a0da-681c09c91559
 z
-java:S1611n"2Remove the parentheses around the "path" parameter(À­—÷ıÿÿÿÿ8Úê˜£÷1J$35968661-a251-4e92-8744-9a90d1b8cfd8
+java:S1611n"2Remove the parentheses around the "path" parameter(À­—÷ıÿÿÿÿ8Úê˜£÷1J$60929830-4e62-4d43-92e4-604f25881e88
 …
-java:S1117o"=Rename "directory" which hides the field declared at line 43.(×Õşƒùÿÿÿÿ8Ûê˜£÷1J$7c45737e-34c6-403a-8cdc-0de7b2a2211c
+java:S1117o"=Rename "directory" which hides the field declared at line 43.(×Õşƒùÿÿÿÿ8Ûê˜£÷1J$2bd06b81-c40f-48eb-95cb-86a6d867bcd0
 “
-java:S3252¥"OUse static access with "javax.swing.WindowConstants" for "DO_NOTHING_ON_CLOSE".(Ïõ‰¬8ßê˜£÷1J$ed39eba7-96f1-4c31-bd25-8ff6ffb2c701
+java:S3252¥"OUse static access with "javax.swing.WindowConstants" for "DO_NOTHING_ON_CLOSE".(Ïõ‰¬8ßê˜£÷1J$1d3ea586-209f-4ef7-ae36-19a227815a55
 §
-java:S2142â"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(è®ã¶øÿÿÿÿ8ãê˜£÷1J$12ad1ea7-e359-4d76-9d9e-206aa73c4629
-z
-java:S1128"7Remove this unused import 'java.awt.event.ActionEvent'.(Úù“‘8‚Åœ£÷1J$8907c616-c1fc-493c-a26f-7e724d99bf83
-}
-java:S1128":Remove this unused import 'java.awt.event.ActionListener'.(Ìä¹8‚Åœ£÷1J$7a5eca94-36e5-4edc-b08f-f0eaa813286b
-u
-java:S1128$"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8‚Åœ£÷1J$c2deacf7-22a3-4907-9563-7dbb134d2979
+java:S2142â"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(è®ã¶øÿÿÿÿ8ãê˜£÷1J$d3049f40-c8b5-4d96-b79c-5047b60a0013
+T
+java:S1128"7Remove this unused import 'java.awt.event.ActionEvent'.(Úù“‘8†á„¼ù1
+W
+java:S1128":Remove this unused import 'java.awt.event.ActionListener'.(Ìä¹8†á„¼ù1
+O
+java:S1128$"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8†á„¼ù1

@@ -40,7 +40,8 @@ public class ${model_name}Controller {
     @Operation(summary = "Get All ${model_name}", description = "Get All ${model_name}")
     @ApiResponse(responseCode = "200", description = "${model_name} Get All successfully")
     @ApiResponse(responseCode = "404", description = "No records with ${model_name} have been found")
-    public ResponseEntity<Page<${model_name}DtoResponse>> getAll${model_name}(Pageable pageable) {
+    public ResponseEntity<Page<${model_name}DtoResponse>> getAll${model_name}(@RequestParam(value = "offset", defaultValue = "0") int offset, @RequestParam(value = "limit", defaultValue = "20") int limit) {
+        Pageable pageable = PageRequest.of(offset, limit);
         Page<${class_name}> ${lowercase_model_name}Page = ${lowercase_model_name}Service.getAll(pageable);
         return new ResponseEntity<>(${lowercase_model_name}Page.map(${model_name}DtoMapper::toResponse), HttpStatus.OK);
     }

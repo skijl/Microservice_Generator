@@ -39,7 +39,7 @@ import java.util.Optional;
 import java.util.prefs.Preferences;
 
 public class Menu extends JFrame {
-    private final String SCRIPT_PATH = System.getProperty("java.io.tmpdir")+"microgen_scripts";
+    private final String SCRIPT_PATH = System.getProperty("java.io.tmpdir")+File.separator+"microgen_scripts";
     private String directory = null;
     private String directoryName = null;
     private String os;
@@ -183,7 +183,7 @@ public class Menu extends JFrame {
         } else {
             os = "linux";
         }
-        runCommand = os.equals("win") ? "C:\\Program Files\\Git\\bin\\bash.exe" : "";
+        runCommand = os.equals("win") ? "C:\\Program Files\\Git\\bin\\bash.exe" : "sh";
     }
 
     void runScript(String scriptPath, JLabel label){

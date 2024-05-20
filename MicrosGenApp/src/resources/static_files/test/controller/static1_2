@@ -15,5 +15,4 @@ class ${model_name}ControllerTest {
     @Mock
     private ${model_name}Service ${lowercase_model_name}Service;
 
-    private final String DOCUMENTATION_URI = "http://swagger_documentation";
     private final ObjectMapper objectMapper = new ObjectMapper();

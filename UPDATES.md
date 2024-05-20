@@ -15,3 +15,7 @@
     - Fixed bug with List/Set/Collection in static objects in tests
     - Mapper uses only existing DTOs. 
     - Controller creates only when all DTOs are present
+- **0.1.1**
+    - Ability to generate DTO Mappers separately
+    - Timestamp in the exception payload
+    - Fixed issues with Linux/Unix systems

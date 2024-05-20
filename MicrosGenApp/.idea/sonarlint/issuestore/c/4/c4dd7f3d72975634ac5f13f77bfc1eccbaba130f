@@ -3,12 +3,12 @@
 java:S1220""Move this file to a named package.8ìÀ«¯ô1J$15b417c0-fc66-4805-b171-9ec07f15d22f
 ˆ
 java:S2095:"EUse try-with-resources or close this "JarFile" in a "finally" clause.(³Õ¢í8ÛÃ«¯ô1J$fc3ad084-b09f-4059-9927-59180c8ee6c0
-
-java:S2095w"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(¼‹ïL8ÛÃ«¯ô1J$5a5c2ab9-e0af-4fff-9a29-4f376644ffe6
-
-java:S2095J"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(¼‹ïL8ÛÃ«¯ô1J$ff4cdbc6-06bd-4684-995b-a038c7241df8
 ˆ
 java:S2095i"EUse try-with-resources or close this "JarFile" in a "finally" clause.(³Õ¢í8ÛÃ«¯ô1J$c6f03a73-1bdd-436c-8f3b-d83831a4b158
+
+java:S2095J"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(¼‹ïL8ÛÃ«¯ô1J$ff4cdbc6-06bd-4684-995b-a038c7241df8
+
+java:S2095w"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(¼‹ïL8ÛÃ«¯ô1J$5a5c2ab9-e0af-4fff-9a29-4f376644ffe6
 ‚
 java:S1118$":Add a private constructor to hide the implicit public one.(ĞŒ…şşÿÿÿÿ8İÃ«¯ô1J$b19e5b9f-28b5-4a8f-8a5c-b9452e2bdd06
 r	java:S106Z"+Replace this use of System.out by a logger.(ô¢€Ûøÿÿÿÿ8åÃ«¯ô1J$8be51582-eb7b-4cc8-8b30-bf0cdafc1166

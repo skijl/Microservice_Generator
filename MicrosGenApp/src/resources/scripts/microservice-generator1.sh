@@ -260,7 +260,7 @@ generate_response_dto() {
             echo "" >> "$create_response_file"
             echo "    private ${field_type} ${field_name};" >> "$create_response_file"
         fi
-    done <<< "$fields"
+    done <<< "${fields}"
 
     # Close CreateRequest class
     echo "}" >> "$create_response_file"

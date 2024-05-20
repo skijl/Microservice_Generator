@@ -7,16 +7,12 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
-    private final String documentationUri;
-
-    public GlobalExceptionHandler(@Value("${swagger.documentation.uri}") String documentationUri) {
-        this.documentationUri = documentationUri;
-    }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Object> handleConstraintViolationException(MethodArgumentNotValidException e) {
@@ -26,16 +22,16 @@ public class GlobalExceptionHandler {
             String errorMessage = error.getDefaultMessage();
             errors.put(fieldName, errorMessage);
         });
-        return new ResponseEntity<>(new ExceptionPayload(errors, documentationUri), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(new ExceptionPayload(errors, LocalDateTime.now()), HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(EntityNotFoundException.class)
     public ResponseEntity<Object> handlerEntityNotFoundException(EntityNotFoundException e){
-        return new ResponseEntity<>(new ExceptionPayload(e.getMessage(), documentationUri), HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(new ExceptionPayload(e.getMessage(), LocalDateTime.now()), HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Object> handlerException(Exception e){
-        return new ResponseEntity<>(new ExceptionPayload(e.getMessage(), documentationUri), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(new ExceptionPayload(e.getMessage(), LocalDateTime.now()), HttpStatus.BAD_REQUEST);
     }
 }

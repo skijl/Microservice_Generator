@@ -183,7 +183,7 @@ public class Menu extends JFrame {
         } else {
             os = "linux";
         }
-        runCommand = os.equals("win") ? "C:\\Program Files\\Git\\bin\\bash.exe" : "bash";
+        runCommand = os.equals("win") ? "C:\\Program Files\\Git\\bin\\bash.exe" : "";
     }
 
     void runScript(String scriptPath, JLabel label){

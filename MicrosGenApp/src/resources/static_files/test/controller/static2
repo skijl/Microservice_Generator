@@ -18,7 +18,7 @@
                         .content(objectMapper.writeValueAsString(${lowercase_model_name}Request)))
                 .andExpect(status().isNotFound())
                 .andExpect(jsonPath("$.errorMessage").value("${model_name} not found"))
-                .andExpect(jsonPath("$.documentationUri").value(DOCUMENTATION_URI));
+                .andExpect(jsonPath("$.timestamp").exists());
     }
 
     @Test
@@ -30,7 +30,7 @@
                         .content(objectMapper.writeValueAsString(${lowercase_model_name}Request)))
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.errorMessage").value("Database connection failed"))
-                .andExpect(jsonPath("$.documentationUri").value(DOCUMENTATION_URI));
+                .andExpect(jsonPath("$.timestamp").exists());
     }
 
     @Test

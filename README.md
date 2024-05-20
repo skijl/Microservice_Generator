@@ -28,10 +28,25 @@
     ```
     - The script supports only one database type per service.
     - The module directory must have the following structure: 
+<<<<<<< HEAD
 2. **Model selector** 
     - `All Models` - You can generate code for all the models
     - Othervise you can generate code for only exact model
 
+=======
+```
+module-directory/
+│
+├─ src/
+│  ├─ main/
+│  │  ├─ java/
+│  │  │  ├─ com/
+│  │  │  │  ├─ example/
+│  │  │  │  │  ├── model/
+│  │  │  │  │  │   └── Entity.java      # Entity class (can have any name)
+│  │  │  │  │  ├── Application.java     # Main application class (can have any name)
+```
+>>>>>>> 26ebbb458603a3eb8223304b02f1cc204d251613
 3. **Generate DTOs** (Generate button for DTOs)
     - The first button you would press after the module directory is fully prepared.
     - Generates the /dto directory with /response & /request classes

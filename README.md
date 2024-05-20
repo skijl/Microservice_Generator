@@ -27,7 +27,7 @@ module-directory/
 │  │  ├─ java/
 │  │  │  ├─ com/
 │  │  │  │  ├─ example/
-│  │  │  │  │  ├── module/
+│  │  │  │  │  ├── model/
 │  │  │  │  │  │   └── Entity.java      # Entity class (can have any name)
 │  │  │  │  │  ├── Application.java     # Main application class (can have any name)
 ```

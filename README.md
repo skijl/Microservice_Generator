@@ -11,7 +11,7 @@
 ## How to use?
 > You can run .jar application by going to the terminal and typing `java -jar MicrosGen.jar` after what you will see the main window:
 
-![alt text](readme_static/menu_info.png) ![alt text](readme_static/menu.png)
+![alt text](readme_static/menu_info1.png) ![alt text](readme_static/menu1.png)
 1. **Module/Directory selector** (Select the module directory of your Springboot project)
     - Directory must contain Spring Boot project that contains /model directory that can contain any number of classes of any names, but they must be the actual entities of JPA or documents of Mongo:
     ```

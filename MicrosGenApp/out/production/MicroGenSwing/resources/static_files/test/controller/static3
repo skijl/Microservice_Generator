@@ -6,7 +6,7 @@
 
         mockMvc.perform(get("${controller_api}/"+Static${model_name}.ID))
                 .andExpect(status().isNotFound())
-                .andExpect(jsonPath("$.errorMessage").value("${model_name} not found"))
+                .andExpect(jsonPath("$.error").value("${model_name} not found"))
                 .andExpect(jsonPath("$.timestamp").exists());
     }
 
@@ -16,23 +16,28 @@
 
         mockMvc.perform(get("${controller_api}/"+Static${model_name}.ID))
                 .andExpect(status().isBadRequest())
-                .andExpect(jsonPath("$.errorMessage").value("Database connection failed"))
+                .andExpect(jsonPath("$.error").value("Database connection failed"))
                 .andExpect(jsonPath("$.timestamp").exists());
     }
 
 
     @Test
     void testGetAll_Success_ShouldReturnOk() throws Exception {
+        PageRequest pageRequest = PageRequest.of(0,10);
         List<${class_name}> ${lowercase_model_name}List = Arrays.asList(${lowercase_model_name}Model, Static${model_name}.${lowercase_model_name}1());
-        Page<${class_name}> ${lowercase_model_name}Page = new PageImpl<>(${lowercase_model_name}List);
-        Pageable pageable = Pageable.unpaged();
-        when(${lowercase_model_name}Service.getAll(pageable)).thenReturn(${lowercase_model_name}Page);
+        Page<${class_name}> ${lowercase_model_name}Page = new PageImpl<>(${lowercase_model_name}List, pageRequest, ${lowercase_model_name}List.size());
+        when(${lowercase_model_name}Service.getAll(any(Pageable.class))).thenReturn(${lowercase_model_name}Page);
 
-        mockMvc.perform(get("${controller_api}/"))
+        mockMvc.perform(get("${controller_api}/")
+                    .param("page", "0")
+                    .param("size", "10"))
                 .andExpect(status().isOk())
-		        .andExpect(jsonPath("$", hasSize(2)))
-                .andExpect(jsonPath("$.[0].id").value(${lowercase_model_name}Response.getId()))
-                .andExpect(jsonPath("$.[1].id").value(Static${model_name}.${lowercase_model_name}DtoResponse2().getId()));
+                .andExpect(jsonPath("$.pageable.pageNumber").value(0))
+                .andExpect(jsonPath("$.pageable.pageSize").value(10))
+                .andExpect(jsonPath("$.totalElements").value(2))
+		        .andExpect(jsonPath("$.content", hasSize(2)))
+                .andExpect(jsonPath("$.content[0].id").value(${lowercase_model_name}Response.getId()))
+                .andExpect(jsonPath("$.content[1].id").value(Static${model_name}.${lowercase_model_name}DtoResponse2().getId()));
     }
 
     @Test
@@ -41,7 +46,7 @@
 
         mockMvc.perform(get("${controller_api}/"))
                 .andExpect(status().isBadRequest())
-                .andExpect(jsonPath("$.errorMessage").value("Database connection failed"))
+                .andExpect(jsonPath("$.error").value("Database connection failed"))
                 .andExpect(jsonPath("$.timestamp").exists());
     }
 

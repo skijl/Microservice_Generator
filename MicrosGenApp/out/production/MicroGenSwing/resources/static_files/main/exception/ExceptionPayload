@@ -9,6 +9,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Data
 public class ExceptionPayload {
-    private Object errorMessage;
+    private Object error;
     private LocalDateTime timestamp;
 }

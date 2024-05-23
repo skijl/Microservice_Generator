@@ -5,11 +5,12 @@
 - Integrated to work with JPA relations and MongoDB documents
 - Best Practices & Design Patterns included
 ## How to install?
-- **Pull with HTTPS -** `git pull https://github.com/skijl/Microservice-Generator.git`
-- **Pull with SSH -** `git pull git@github.com:skijl/Microservice-Generator.git`
-- **Download ZIP -** `Blue button Code -> Download ZIP`
-## How to use?
-> You can run .jar application by going to the terminal and typing `java -jar MicrosGen.jar` after what you will see the main window:
+1) **Initialize git in your directory -** `git init`
+2) **Clone with SSH -** `git clone git@github.com:skijl/Microservice_Generator.git`
+- OR
+1) **Download ZIP -** `Blue button Code -> Download ZIP`
+## How to run?
+> To run the .jar you must have JDK instlled on your computer. Run the application by going to the terminal and typing `java -jar MicrosGen.jar` after what you will see the main window:
 
 ![alt text](readme_static/menu_info1.png) ![alt text](readme_static/menu1.png)
 1. **Module/Directory selector** (Select the module directory of your Springboot project)
@@ -51,5 +52,59 @@
     - Mainly used to see the last executed script and the success of it
 8. **Selected directory**
     - Shows the selected directory module
+
+## Necessary dependecies pom.xml
+- To successfully make the app work you must use:
+```
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
+```
+OR
+```
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-mongodb</artifactId>
+</dependency>
+```
+- We use validation dependency:
+```
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-validation</artifactId>
+</dependency>
+```
+- Started web dependency:
+```
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+```
+- Open API dependency for the Swagger:
+```
+<dependency>
+    <groupId>org.springdoc</groupId>
+    <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+    <version>2.5.0</version> <!--any version-->
+</dependency>
+```
+- Lombok to remove boilerplate code:
+```
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <optional>true</optional>
+</dependency>
+```
+- JUnit for tesing purposes:
+```
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <scope>test</scope>
+</dependency>
+```
 
 `If you have any bug/problem/requirement - please send be descriptive email with screenshots - makhrevychmaxim@gmail.com`

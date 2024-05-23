@@ -229,12 +229,18 @@ generate_response_dto() {
         field_type=$(echo "$field" | awk '{print $1}')
         field_name=$(echo "$field" | awk '{print $2}')
 
+        if [[ "$field_type" == *List* || "$field_type" == *Set* || "$field_type" == *Collection* ]]; then
+            :
+        else 
+            echo "" >> "$create_response_file"
+        fi
+        
         case $field_type in
         String|Long|Integer|BigDecimal|Double|LocalDateTime)
             if [ $field_type == "LocalDateTime" ] ; then
-            if ! sed -n '3p' "$create_response_file" | grep -q "import com.fasterxml.jackson.annotation.JsonFormat;"; then
-                sed -i '3i\import com.fasterxml.jackson.annotation.JsonFormat;' "$create_response_file"
-            fi
+                if ! sed -n '3p' "$create_response_file" | grep -q "import com.fasterxml.jackson.annotation.JsonFormat;"; then
+                    sed -i '3i\import com.fasterxml.jackson.annotation.JsonFormat;' "$create_response_file"
+                fi
                 echo "    @JsonFormat(pattern = \"yyyy-MM-dd'T'HH:mm:ss\")" >> "$create_response_file"
             fi ;;
         *)
@@ -257,7 +263,6 @@ generate_response_dto() {
         if [[ "$field_type" == *List* || "$field_type" == *Set* || "$field_type" == *Collection* ]]; then
             :
         else 
-            echo "" >> "$create_response_file"
             echo "    private ${field_type} ${field_name};" >> "$create_response_file"
         fi
     done <<< "${fields}"

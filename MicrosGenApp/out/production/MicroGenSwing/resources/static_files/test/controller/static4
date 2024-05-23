@@ -17,7 +17,7 @@
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(${lowercase_model_name}Request)))
                 .andExpect(status().isNotFound())
-                .andExpect(jsonPath("$.errorMessage").value("${model_name} not found"))
+                .andExpect(jsonPath("$.error").value("${model_name} not found"))
                 .andExpect(jsonPath("$.timestamp").exists());
     }
 
@@ -29,7 +29,7 @@
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(${lowercase_model_name}Request)))
                 .andExpect(status().isBadRequest())
-                .andExpect(jsonPath("$.errorMessage").value("Database connection failed"))
+                .andExpect(jsonPath("$.error").value("Database connection failed"))
                 .andExpect(jsonPath("$.timestamp").exists());
     }
 
@@ -47,7 +47,7 @@
 
         mockMvc.perform(delete("${controller_api}/"+Static${model_name}.ID))
                 .andExpect(status().isBadRequest())
-                .andExpect(jsonPath("$.errorMessage").value("Database connection failed"))
+                .andExpect(jsonPath("$.error").value("Database connection failed"))
                 .andExpect(jsonPath("$.timestamp").exists());
     }
 }

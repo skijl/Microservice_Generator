@@ -8,6 +8,7 @@
         ${model_name}Controller ${lowercase_model_name}Controller = new ${model_name}Controller(${lowercase_model_name}Service);
         mockMvc = MockMvcBuilders.standaloneSetup(${lowercase_model_name}Controller)
                 .setControllerAdvice(new GlobalExceptionHandler())
+                .setCustomArgumentResolvers(new PageableHandlerMethodArgumentResolver())
                 .build();
     }
 

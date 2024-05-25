@@ -1,0 +1,21 @@
+
+–
+java:S1104"SMake bgColor a static final constant or non-public and provide accessors if needed.(şºæà8ôæõîú1J$3abe676e-2040-47bc-beff-4a2275012dca
+™
+java:S1104"VMake cardLayout a static final constant or non-public and provide accessors if needed.(íÒğâ8ôæõîú1J$87e6f148-119a-4a85-bc1e-3dbeb99a1ba5
+
+java:S1104"UMake container a static final constant or non-public and provide accessors if needed.(¹ë½‰ùÿÿÿÿ8õæõîú1J$2f421469-4a47-4845-9a74-817549c7cb65
+p
+java:S1444"-Make this "public static bgColor" field final(şºæà8õæõîú1J$f10841a9-6de6-4c22-bf25-829a1fd94792
+s
+java:S1444"0Make this "public static cardLayout" field final(íÒğâ8öæõîú1J$43664f94-8ed7-492a-8935-4fe9942aeb27
+w
+java:S1444"/Make this "public static container" field final(¹ë½‰ùÿÿÿÿ8öæõîú1J$5e7ba0ec-ded7-4a82-8d37-6939321a360f
+]
+java:S1220""Move this file to a named package.8÷æõîú1J$7ba3f361-fa94-4c29-89d9-9dadaaaf08c6
+i
+java:S30105"&Remove this assignment of "container".(¤‰Æä8‡çõîú1J$847cbccb-14d6-480b-8e3b-2ecaef81bfd1
+j
+java:S30106"'Remove this assignment of "cardLayout".(ÑÆ„¸8‡çõîú1J$c2f8b350-167b-4715-b32e-e95b2dff12b7
+‘
+java:S3252"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(Õû»öşÿÿÿÿ8Œçõîú1J$758af1ad-c0cc-41cf-bad6-3107920cfd34

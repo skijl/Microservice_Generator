@@ -1,0 +1,25 @@
+
+d
+java:S1192‹"FDefine a constant instead of duplicating this literal " for " 4 times.(»Ë„8ö²şîú1
+7
+java:S1220""Move this file to a named package.8ú²şîú1
+f
+java:S2095}"DUse try-with-resources or close this "Stream" in a "finally" clause.(Ã´Ô¸úÿÿÿÿ8™³şîú1
+r	java:S116
+"VRename this field "SCRIPT_PATH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶ı¿8›³şîú1
+n
+java:S1450"QRemove the "os" field and declare it as a local variable in the relevant methods.(Ò…óó8 ³şîú1
+o
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 27 to the 15 allowed.(‚Í²Ë8¥³şîú1
+T
+java:S1611>"2Remove the parentheses around the "path" parameter(À­—÷ıÿÿÿÿ8±³şîú1
+_
+java:S1117?"=Rename "directory" which hides the field declared at line 11.(×Õşƒùÿÿÿÿ8³³şîú1
+h
+java:S1117ˆ"ERename "generateDTOButton" which hides the field declared at line 17.(ØõûÌÿÿÿÿÿ8ã³şîú1
+c
+java:S1117›"ERename "generateDTOButton" which hides the field declared at line 17.(“ä¯¾8ê³şîú1
+g
+java:S1117®"IRename "generateServiceButton" which hides the field declared at line 19.(®¬´“8î³şîú1
+d
+java:S1117Á"GRename "generateTestsButton" which hides the field declared at line 20.(™•£8ò³şîú1

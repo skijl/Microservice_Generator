@@ -1,0 +1,36 @@
+
+Š
+java:S1192ô"FDefine a constant instead of duplicating this literal " for " 4 times.(»Ë„8£Ï®åú1J$de175735-9274-42ac-bd90-089783cc5c3d
+–
+java:S11041"SMake bgColor a static final constant or non-public and provide accessors if needed.(şºæà8¥Ï®åú1J$4ac4db5d-caf3-4b1d-bccc-98271546c796
+p
+java:S14441"-Make this "public static bgColor" field final(şºæà8¦Ï®åú1J$ab83e511-51be-4e59-abda-641521745c9c
+
+java:S2095æ"DUse try-with-resources or close this "Stream" in a "finally" clause.(Ã´Ô¸úÿÿÿÿ8ÃÏ®åú1J$7e599159-64f0-48db-824c-a48752bdf928
+˜	java:S116("VRename this field "SCRIPT_PATH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶ı¿8ÆÏ®åú1J$88f25b26-d50c-499b-b345-5076b07a94cd
+Ä
+java:S1186Ó"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(©ìÁ8·ËÓåú1J$79728593-086b-48dd-9a41-39c431b724b1
+”
+java:S1450+"QRemove the "os" field and declare it as a local variable in the relevant methods.(Ò…óó8ÊÏ®åú1J$fe34a72a-7718-4ce3-9cec-961435a27796
+•
+java:S37768"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(¸§Ó8ĞÏ®åú1J$0d5f6039-1ff7-40df-a620-0a99e6034f6f
+‘
+java:S3252C"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(Õû»öşÿÿÿÿ8œ©Õåú1J$8be36ac9-7f0d-4e2f-8a72-b4f1d2a4a843
+{
+java:S1611‚"2Remove the parentheses around the "path" parameter(À­—÷ıÿÿÿÿ8İÏ®åú1J$191b498b-4f35-461e-835a-c275b46886ba
+†
+java:S1117ƒ"=Rename "directory" which hides the field declared at line 41.(×Õşƒùÿÿÿÿ8ßÏ®åú1J$0b9c33c9-c016-43f6-86b2-71dc67504f97
+…
+java:S1117¦"ARename "settingsPanel" which hides the field declared at line 46.(¥Œš¯8áÏ®åú1J$f3289c4f-4f2d-45de-9a5b-64a0366a3a3c
+“
+java:S3252¹"OUse static access with "javax.swing.WindowConstants" for "DO_NOTHING_ON_CLOSE".(Ïõ‰¬8äÏ®åú1J$fe8d7a0f-c013-4a27-af22-c920916a2492
+
+java:S1117ñ"ERename "generateDTOButton" which hides the field declared at line 52.(ØõûÌÿÿÿÿÿ8íÏ®åú1J$d2ec88c1-a9f3-4639-bf8c-16d7edf09571
+‰
+java:S1117„"ERename "generateDTOButton" which hides the field declared at line 52.(“ä¯¾8ïÏ®åú1J$810435db-6b43-4ee0-b9b0-330bd88667e8
+
+java:S1117™"IRename "generateServiceButton" which hides the field declared at line 54.(®¬´“8òÏ®åú1J$352c7853-4262-44d0-9dfe-5f2295b80a7e
+Š
+java:S1117¬"GRename "generateTestsButton" which hides the field declared at line 55.(™•£8öÏ®åú1J$6f7dfb6b-0f31-429a-b8d6-808749c35d9b
+o
+java:S1602Ä",Remove useless curly braces around statement(¸¹Â8úÏ®åú1J$367fada4-676f-4671-9e40-03b3d1f56575

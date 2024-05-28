@@ -19,3 +19,12 @@
     - Ability to generate DTO Mappers separately
     - Timestamp in the exception payload
     - Fixed issues with Linux/Unix systems
+- **0.2.0**
+    - Previous action shows used model
+    - Fixed bug with not working tests for GetAll
+    - Directory for test static objects renamed to /static_object
+    - Changed application design
+    - Ability to select exact action for generating service
+    - Added settings button
+    - Ability to generate dependencies
+    - Ability to choose the theme in settings

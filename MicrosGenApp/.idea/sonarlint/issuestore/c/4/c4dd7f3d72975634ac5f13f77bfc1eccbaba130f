@@ -1,19 +1,19 @@
 
-7
-java:S1220""Move this file to a named package.8Üíïšú1
-j
-java:S2095J"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(¼‹ïL8öïšú1
-j
-java:S2095w"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(¼‹ïL8öïšú1
-b
-java:S2095i"EUse try-with-resources or close this "JarFile" in a "finally" clause.(³Õ¢í8‘öïšú1
-b
-java:S2095:"EUse try-with-resources or close this "JarFile" in a "finally" clause.(³Õ¢í8‘öïšú1
-\
-java:S1118$":Add a private constructor to hide the implicit public one.(ĞŒ…şşÿÿÿÿ8–öïšú1
-L	java:S106Z"+Replace this use of System.out by a logger.(ô¢€Ûøÿÿÿÿ8§öïšú1
-]	java:S899’";Do something with the "boolean" value returned by "delete".(²Œ­ûÿÿÿÿ8´öïšú1
-q
-java:S4042’"NUse "java.nio.file.Files#delete" here for better messages on error conditions.(²Œ­ûÿÿÿÿ8µöïšú1
-l
-java:S4042–"NUse "java.nio.file.Files#delete" here for better messages on error conditions.(ê©àÅ8¶öïšú1
+]
+java:S1220""Move this file to a named package.8ïÎˆâû1J$8fdb6f39-45b1-408a-8a2e-504d4d532d5e
+‰
+java:S2095`"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(¼‹ïLJ$1546bbfb-ad7f-40b6-b957-6c3af53da37d
+‰
+java:S20953"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(¼‹ïLJ$d224b957-04cf-427a-8204-3b00930259e2
+
+java:S2095#"EUse try-with-resources or close this "JarFile" in a "finally" clause.(³Õ¢íJ$bbc146ba-2fd6-4ba0-8eaf-96cab2e2e902
+
+java:S2095R"EUse try-with-resources or close this "JarFile" in a "finally" clause.(³Õ¢íJ$3cee1f06-72dd-4248-a03e-ad5a7fc59fe3
+{
+java:S1118":Add a private constructor to hide the implicit public one.(ĞŒ…şşÿÿÿÿJ$84b54600-a6bd-4f13-978b-168b7c27ac01
+k	java:S106C"+Replace this use of System.out by a logger.(ô¢€ÛøÿÿÿÿJ$20beab7f-8478-49e7-85b8-94ff176dc6da
+{	java:S899{";Do something with the "boolean" value returned by "delete".(²Œ­ûÿÿÿÿJ$06788dae-1dfc-4ab3-9f3b-85c81202434f
+
+java:S4042{"NUse "java.nio.file.Files#delete" here for better messages on error conditions.(²Œ­ûÿÿÿÿJ$ce02e856-feda-45d0-b922-d94c85077e08
+Š
+java:S4042"NUse "java.nio.file.Files#delete" here for better messages on error conditions.(ê©àÅJ$a3704891-24c5-4273-8f77-dd451addbe76

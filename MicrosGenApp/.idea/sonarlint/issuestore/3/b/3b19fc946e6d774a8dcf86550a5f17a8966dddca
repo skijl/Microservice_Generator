@@ -1,25 +1,36 @@
 
-d
-java:S1192‹"FDefine a constant instead of duplicating this literal " for " 4 times.(»Ë„8ö²şîú1
-7
-java:S1220""Move this file to a named package.8ú²şîú1
-f
-java:S2095}"DUse try-with-resources or close this "Stream" in a "finally" clause.(Ã´Ô¸úÿÿÿÿ8™³şîú1
-r	java:S116
-"VRename this field "SCRIPT_PATH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶ı¿8›³şîú1
-n
-java:S1450"QRemove the "os" field and declare it as a local variable in the relevant methods.(Ò…óó8 ³şîú1
-o
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 27 to the 15 allowed.(‚Í²Ë8¥³şîú1
-T
-java:S1611>"2Remove the parentheses around the "path" parameter(À­—÷ıÿÿÿÿ8±³şîú1
-_
-java:S1117?"=Rename "directory" which hides the field declared at line 11.(×Õşƒùÿÿÿÿ8³³şîú1
-h
-java:S1117ˆ"ERename "generateDTOButton" which hides the field declared at line 17.(ØõûÌÿÿÿÿÿ8ã³şîú1
-c
-java:S1117›"ERename "generateDTOButton" which hides the field declared at line 17.(“ä¯¾8ê³şîú1
-g
-java:S1117®"IRename "generateServiceButton" which hides the field declared at line 19.(®¬´“8î³şîú1
-d
-java:S1117Á"GRename "generateTestsButton" which hides the field declared at line 20.(™•£8ò³şîú1
+	java:S112„"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8›ãšûû1J$51bbe0e5-b15e-448d-b9d8-125a2896fa77
+q
+java:S1604Ì"(Make this anonymous inner class a lambda(ÁË€Šûÿÿÿÿ8 ãšûû1J$40d0890e-d8e3-4af2-a08b-281f17374fa4
+]
+java:S1220""Move this file to a named package.8¤ãšûû1J$a1a102fa-d786-4ab7-841b-49da3788995f
+
+java:S2095©"DUse try-with-resources or close this "Stream" in a "finally" clause.(Ã´Ô¸úÿÿÿÿ8ºãšûû1J$55f6fa78-f9dd-4d76-aebc-6a1847bfce42
+”
+java:S1450"QRemove the "os" field and declare it as a local variable in the relevant methods.(Ò…óó8¿ãšûû1J$107b95c7-161a-4ef8-a685-4fff175dc875
+
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(—¾õ½ûÿÿÿÿ8Âãšûû1J$7f7dc87a-2108-41b6-a732-e8913f14e558
+•
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 29 to the 15 allowed.(‚Í²Ë8Äãšûû1J$b73c4bf5-4c2e-4a5f-a9c1-6ebec51ade04
+z
+java:S1611Z"2Remove the parentheses around the "path" parameter(À­—÷ıÿÿÿÿ8Íãšûû1J$e6f12412-1fe1-46b1-947c-470331bd1e2f
+…
+java:S1117["=Rename "directory" which hides the field declared at line 19.(×Õşƒùÿÿÿÿ8Îãšûû1J$7dd07b81-3081-4083-bd2c-183d5c695431
+z
+java:S2696ä"6Make the enclosing method "static" or remove this set.(°Ç±®8İãšûû1J$2650f715-6c3b-461c-80e5-4d0b24fbbbb6
+y
+java:S2696ë"6Make the enclosing method "static" or remove this set.(ß£‹8İãšûû1J$6bd32d44-2b8e-4bca-a5d1-0f60c1780026
+
+java:S2696ò"6Make the enclosing method "static" or remove this set.(ášÊ‘ùÿÿÿÿ8Şãšûû1J$9fd847e1-cf3f-4d91-b192-00b9d60020c2
+
+java:S2696ù"6Make the enclosing method "static" or remove this set.(ÑÂØÃüÿÿÿÿ8Şãšûû1J$b9cc4895-1468-43b6-bd2b-8510064b446c
+z
+java:S2696€"6Make the enclosing method "static" or remove this set.(®ş…ó8ßãšûû1J$794df4e4-256f-4bdc-b9a5-ea50de65fa39
+
+java:S1117ˆ"ERename "generateDTOButton" which hides the field declared at line 25.(ØõûÌÿÿÿÿÿ8àãšûû1J$015ed4c7-1df9-491d-855f-5e4d8f1b03fc
+‰
+java:S1117"ERename "generateDTOButton" which hides the field declared at line 25.(“ä¯¾8âãšûû1J$6bc3d156-b2d8-4c96-bffb-2e4d4e0dae7f
+Š
+java:S1117²"GRename "generateTestsButton" which hides the field declared at line 28.(™•£8äãšûû1J$6f0b6b77-77f0-458b-a34d-ae5adfdb97d9
+y
+java:S1068"1Remove this unused "directoryName" private field.(¦ğËĞøÿÿÿÿ8ìãšûû1J$5393647d-a3c1-49e9-8c3d-1cd61af074d2

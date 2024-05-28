@@ -1,0 +1,19 @@
+
+–
+java:S1104!"SMake bgColor a static final constant or non-public and provide accessors if needed.(şºæà8ô„âû1J$f5da51ce-210b-4971-bab8-94c0af4820bc
+–
+java:S1104""SMake fgColor a static final constant or non-public and provide accessors if needed.(Âášş8ô„âû1J$14f394c0-c880-4159-b709-6c97c7afeaa1
+p
+java:S1444!"-Make this "public static bgColor" field final(şºæà8‘ô„âû1J$e0d3a334-facb-486d-8000-9b48b66b4cce
+p
+java:S1444""-Make this "public static fgColor" field final(Âášş8‘ô„âû1J$45dab157-0958-4b8b-a04b-93ec1f632bbf
+]
+java:S1220""Move this file to a named package.8‹‡âû1J$5d883029-0e1a-417e-a2a7-8c2b6548c6b7
+}
+java:S1118":Add a private constructor to hide the implicit public one.(µÔÜò8™ô„âû1J$0f5c5e97-ed6a-4ead-9cbb-c1b3943b4aab
+
+java:S62016"LReplace this instanceof check and cast with 'instanceof Container container'(Ò¸î¾8ÂÇ…âû1J$d6cf98fe-b95e-4da1-a9fb-40c7deaf6308
+–
+java:S6201?"NReplace this instanceof check and cast with 'instanceof JComponent jcomponent'(Õµ§ùÿÿÿÿ8ô„âû1J$ad53ff07-a18a-483f-8113-5c2c5fe30b73
+š
+java:S6201A"RReplace this instanceof check and cast with 'instanceof TitledBorder titledBorder'(æÓÏ¦ÿÿÿÿÿ8ô„âû1J$0d86fa27-db2f-4c8c-8fda-4ecda3667614

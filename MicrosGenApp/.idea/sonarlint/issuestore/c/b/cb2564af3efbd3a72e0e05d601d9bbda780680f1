@@ -1,5 +1,15 @@
 
-V
-java:S1220""Move this file to a named package.J$978b84bc-d4fe-4833-8137-9c0d382328e2
-J
-java:S1128"(Remove this unused import 'javax.swing'.(Ìí¿Üüÿÿÿÿ8Âíÿîú1
+k
+java:S1604+"(Make this anonymous inner class a lambda(İæÏ¯8—ôñáû1J$47b30ae3-d32a-45d1-8f79-ab785c998077
+p
+java:S1604>"(Make this anonymous inner class a lambda(¬ÌßÆùÿÿÿÿ8—ôñáû1J$0a9ce3c8-5b70-4d91-928c-b7ace57514ea
+]
+java:S1220""Move this file to a named package.8¥ˆşáû1J$6fdd5102-19ec-4b86-a726-76d0a1763432
+~
+java:S2696/"6Make the enclosing method "static" or remove this set.(…Òùÿÿÿÿ8ê½´éû1J$cb1425f0-f881-470a-8d3a-535b7ef517a1
+~
+java:S26961"6Make the enclosing method "static" or remove this set.(¬ÓÌƒúÿÿÿÿ8ê½´éû1J$7595f756-5976-4957-aee3-1e7632cda2e8
+…
+java:S1126A"BReplace this if-then-else statement by a single method invocation.(”Œîè8 ôñáû1J$fb75f84e-a164-4b84-b1d5-6a2f0134c86c
+r	java:S106w"+Replace this use of System.err by a logger.(ŒÙ¡¤øÿÿÿÿ8§ôñáû1J$3f06c4fe-f70c-487d-9711-ceca48180dfa
+k	java:S108")Either remove or fill this block of code.(”ã‰G8©ôñáû1J$c35962d5-54ba-4988-a458-40b998536651

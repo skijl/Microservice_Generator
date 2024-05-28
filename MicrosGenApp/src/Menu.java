@@ -7,18 +7,27 @@ import java.util.Objects;
 import java.util.prefs.Preferences;
 
 public class Menu extends JFrame {
-    public static Color bgColor = new Color(30, 30, 30);
+
     public static CardLayout cardLayout;
     public static Container container;
 
     public Menu() {
-        super("MicrosGen");
+        super("Microsgen");
         Preferences prefs = Preferences.userNodeForPackage(Menu.class);
         String lastDirectory = prefs.get("lastDirectory", null);
         JFileChooser fileChooser = new JFileChooser(lastDirectory);
+        FileChecker.createTempFiles();
+
+        try {
+            BufferedImage logoImage = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("resources/static/logo.png")));
+            setIconImage(logoImage);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(400, 350);
+        setSize(420, 410);
+        setMinimumSize(new Dimension(380, 380));
         setLocationRelativeTo(null);
 
         // Create header panel
@@ -34,17 +43,6 @@ public class Menu extends JFrame {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        JLabel titleLabel = new JLabel("Microservice Generator");
-        titleLabel.setForeground(new Color(50, 170, 255));
-        titleLabel.setFont(new Font("Arial", Font.BOLD, 18)); // Change font and size as needed
-        headerPanel.add(titleLabel);
-
-        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        buttonPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
-        JButton settingsButton = createSettingsButton();
-        buttonPanel.add(settingsButton);
-
-        headerPanel.add(buttonPanel, BorderLayout.NORTH);
 
         // Set up card layout for content switching
         container = getContentPane();
@@ -60,30 +58,18 @@ public class Menu extends JFrame {
 
         // Display the menu panel initially
         cardLayout.show(container, "1");
+        settingsPanel.loadSettings();
     }
 
-    private JButton createSettingsButton() {
-        JButton settingsButton = new JButton("");
-        settingsButton.setSize(new Dimension(25, 25)); // Set the button size
-        settingsButton.setContentAreaFilled(false); // Make the button transparent
-        settingsButton.setBorderPainted(false); // Remove border
-        settingsButton.setFocusPainted(false); // Remove focus indication
-        settingsButton.addActionListener(e -> cardLayout.show(container, "2"));
-        try {
-            // Load the image
-            BufferedImage originalImg = ImageIO.read(getClass().getResource("resources/static/settings_button.png"));
+    public static void registerThemeChangeListener(Component component) {
+        ThemeChangeListener listener = new ThemeChangeListener();
+        component.addPropertyChangeListener("theme", listener);
 
-            // Resize the image
-            int newWidth = 30; // New width in pixels
-            int newHeight = 33; // New height in pixels
-            Image resizedImg = originalImg.getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH);
-
-            // Set the resized image as the button's icon
-            settingsButton.setIcon(new ImageIcon(resizedImg));
-        } catch (IOException ex) {
-            ex.printStackTrace();
+        if (component instanceof JPanel) {
+            for (Component child : ((JPanel) component).getComponents()) {
+                registerThemeChangeListener(child);
+            }
         }
-        return settingsButton;
     }
 
     public static void main(String[] args) {

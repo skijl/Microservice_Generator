@@ -1,24 +1,3 @@
-# MIT License
-
-# Copyright (c) 2024 Maksym Makhrevych
-
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-
-# The above copyright notice and this permission notice shall be included in all
-# copies or substantial portions of the Software.
-
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
 #!/bin/bash
 
 # Check if the arguments are provided - 1st argument = static dir, 2nd argument - module directory
@@ -50,28 +29,6 @@ STATIC_FILES_DIR="$SCRIPT_DIR/static/main"
 
 # For imports
 base_package_name=$(echo "$BASE_DIR" | sed 's|.*java/||; s|/|.|g')
-
-# Get type of Id
-getIdType() {
-    model_file=$(find "$MODELS_DIR" -maxdepth 1 -type f -name "*.java" -print -quit)
-    if [ -n "$model_file" ]; then
-        if [ ! -z "$1" ]; then
-            model_file="$MODELS_DIR/$1.java"
-            id_line=$(grep -n "@Id" "$model_file" | head -n 1 | cut -d ":" -f 1)
-            private_line=$(awk "NR > $id_line && /private/ {print NR; exit}" "$model_file")
-            id_type=$(awk "NR==$private_line" "$model_file" | awk '{print $2}')
-            echo "$id_type"
-        else
-            id_line=$(grep -n "@Id" "$model_file" | head -n 1 | cut -d ":" -f 1)
-            private_line=$(awk "NR > $id_line && /private/ {print NR; exit}" "$model_file")
-            id_type=$(awk "NR==$private_line" "$model_file" | awk '{print $2}')
-            echo "$id_type"
-        fi
-    else
-        echo "No models are detected in /model dir"
-        exit 1
-    fi
-}
 
 # Function to generate repository interface---------------------------------------------------------------------------------------------------------
 REPOSITORY_DIR="$BASE_DIR/repository"

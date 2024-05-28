@@ -1,25 +1,3 @@
-# MIT License
-
-# Copyright (c) 2024 Maksym Makhrevych
-
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-
-# The above copyright notice and this permission notice shall be included in all
-# copies or substantial portions of the Software.
-
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
-
 #!/bin/bash
 
 # Check if the arguments are provided - 1st argument = static dir, 2nd argument - module directory
@@ -55,9 +33,9 @@ MODELS_DIR="$BASE_DIR/model"
 base_package_name=$(echo "$BASE_DIR" | sed 's|.*java/||; s|/|.|g')
 
 
-mkdir -p "$TEST_BASE_DIR/staticObject"
+mkdir -p "$TEST_BASE_DIR/static_object"
 
-# Function to create StaticObject classes-------------------------------------------------------------------------
+# Function to create Static Object classes-------------------------------------------------------------------------
 create_static_object_classes() {
     local model_name="$1"
     local class_name="$1"
@@ -88,8 +66,8 @@ create_static_object_classes() {
     fi
 
     # Create Static<ModelName>.java
-    static_file="$TEST_BASE_DIR/staticObject/Static${model_name}.java"
-    echo "package ${base_package_name}.staticObject;" > "$static_file"
+    static_file="$TEST_BASE_DIR/static_object/Static${model_name}.java"
+    echo "package ${base_package_name}.static_object;" > "$static_file"
     echo "" >> "$static_file"
     if [ "$request_exists" = true ]; then
         echo "import ${base_package_name}.dto.request.${model_name}DtoRequest;" >> "$static_file"
@@ -308,7 +286,7 @@ else
     fi
 fi
 
-echo "StaticObject classes generated successfully"
+echo "Static Object classes generated successfully"
 
 # Generate Service Tests----------------------------------------------------------------------------------------------------------------
 process_temp_file() {
@@ -348,13 +326,13 @@ create_service_tests() {
     while IFS= read -r line && [[ ! "$line" == *"import lombok.extern.slf4j"* ]]; do
         echo "$line" >> "$service_test_file"
     done < <(tail -n +2 $service_file)
-    echo "import ${base_package_name}.staticObject.Static${model_name};" >> "$service_test_file"
+    echo "import ${base_package_name}.static_object.Static${model_name};" >> "$service_test_file"
     
     first_line=$(grep -m 1 "private final" "$service_file")
     while IFS= read -r object; do
         echo "$object" >> "temp"
         object="${object%Service}"
-        echo "import ${base_package_name}.staticObject.Static${object};" >> "$service_test_file"
+        echo "import ${base_package_name}.static_object.Static${object};" >> "$service_test_file"
     done < <(grep "private final" "$service_file" | sed '1d; s/private final \([^ ]*\) .*/\1/' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
     sed "s/\${model_name}/${model_name}/g; s/\${lowercase_model_name}/${lowercase_model_name}/g" "$STATIC_FILES_TEST_DIR/service/static1" >> "$service_test_file"
     
@@ -483,7 +461,7 @@ fi
 
 echo "Service layer tests generated successfully"
 
-# Generate ControllerTests---------------------------------------------------------------------------------------------------------------------------
+# Generate Controller Tests---------------------------------------------------------------------------------------------------------------------------
 mkdir -p "$TEST_BASE_DIR/controller"
 create_controller_tests() {
     local model_name="$1"
@@ -550,7 +528,7 @@ create_controller_tests() {
     done < <(tail -n +4 $controller_file)
     echo "import ${base_package_name}.exception.EntityNotFoundException;" >> "$controller_test_file"
     echo "import ${base_package_name}.service.${model_name}Service;" >> "$controller_test_file"
-    echo "import ${base_package_name}.staticObject.Static${model_name};" >> "$controller_test_file"
+    echo "import ${base_package_name}.static_object.Static${model_name};" >> "$controller_test_file"
     echo "import ${base_package_name}.exception.GlobalExceptionHandler;" >> "$controller_test_file"
     sed "s~\${model_name}~$model_name~g; s~\${lowercase_model_name}~$lowercase_model_name~g; s~\${controller_api}~$controller_api~g; s~\${class_name}~$class_name~g" "$STATIC_FILES_TEST_DIR/controller/static1_1" >> "$controller_test_file"
 

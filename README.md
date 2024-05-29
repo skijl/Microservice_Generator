@@ -60,7 +60,7 @@
 9. **Selected directory**
     - Shows the selected directory module
 10. **Settings**
-    - **1** - You can select if you want to generate dependencies used by scxrip automatically
+    - **1** - You can select if you want to generate dependencies used by script automatically
     - **2** - You can choose if you want to use dark theme
     - ![alt text](readme_static/ui_info4.png)
 ## Dependencies generated in pom.xml

@@ -11,7 +11,7 @@
 - OR
 1) **Download ZIP -** `Blue button Code -> Download ZIP`
 ## How to run?
-> To run the .jar you must have JDK instlled on your computer. Run the application by going to the terminal and typing `java -jar MicrosGen.jar` after what you will see the main window:
+> To run the .jar you must have JDK installed on your computer. Run the application by going to the terminal and typing `java -jar MicrosGen.jar` after what you will see the main window:
 
 ![alt text](readme_static/ui_info1.png) ![alt text](readme_static/ui_info2.png)
 1. **Module/Directory selector** (Select the module directory of your Springboot project)
